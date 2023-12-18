@@ -22,7 +22,7 @@ vscode自动更新ssh remote插件的服务器部分vscode-server可能会失败
     https://update.code.visualstudio.com/commit:<hash code>/server-linux-x64/stable
     ```
 
-    **注意：**有时访问该链接会发生“访问 update.code.visualstudio.com 被拒绝”错误，可以尝试在服务器使用wget或通过vpn下载。
+    **注意：**有时访问该链接会发生『访问 update.code.visualstudio.com 被拒绝』错误，可以尝试通过vpn或在服务器上使用wget下载。
 
 5. 将获得的`vscode-server-linux-x64.tar.gz`解压至`~/.vscode-server/bin`目录。
 
