@@ -6,7 +6,7 @@ vscode自动更新ssh remote插件的服务器部分vscode-server可能会失败
 
 1. 登录服务器，输入下方命令，找到自动更新失败的vscode-server版本，`-t`表示按修改时间排序：
 
-    ```bash
+    ```sh
     ls -lt ~/.vscode-server/bin
     ```
 
@@ -22,11 +22,13 @@ vscode自动更新ssh remote插件的服务器部分vscode-server可能会失败
     https://update.code.visualstudio.com/commit:<hash code>/server-linux-x64/stable
     ```
 
-    **注意：**有时访问该链接会发生『访问 update.code.visualstudio.com 被拒绝』错误，可以尝试通过vpn或在服务器上使用wget下载。
+    + 有时访问该链接会发生『访问 update.code.visualstudio.com 被拒绝』错误，可以尝试通过vpn或在服务器上使用wget下载。
+
+    + 若服务器使用非x86-64指令集，需要将server-linux-x64替换为。例如arm64服务器，替换为server-linux-arm64。
 
 5. 将获得的`vscode-server-linux-x64.tar.gz`解压至`~/.vscode-server/bin`目录。
 
-    ```bash
+    ```sh
     mv ./vscode-server-linux-x64.tar.gz ~/.vscode-server/bin
     cd ~/.vscode-server/bin
     tar -xzf vscode-server-linux-x64.tar.gz
@@ -34,7 +36,7 @@ vscode自动更新ssh remote插件的服务器部分vscode-server可能会失败
 
 6. 删除原来的hash code目录，并将解压得到的目录`vscode-server-linux-x64`重命名为hash code。
 
-    ```bash
+    ```sh
     rm -rf <hash code>
     mv vscode-server-linux-x64 <hash code>
     ```
